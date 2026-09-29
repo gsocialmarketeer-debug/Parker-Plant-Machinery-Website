@@ -18,7 +18,7 @@
     <nav class="main-nav" aria-label="Main navigation">
       <a href="index.html#services">Services</a>
       <a href="index.html#sectors">Who We Work With</a>
-      <a href="gallery.html" aria-current="page">Projects</a>
+      <a href="gallery.html" aria-current="page">Gallery</a>
       <a href="index.html#reviews">Reviews</a>
       <a href="index.html#contact">Contact</a>
     </nav>
@@ -32,6 +32,20 @@
         <h1>Construction Projects</h1>
         <p>A selection of genuine work in progress and completed groundworks. We support domestic, commercial and rural projects with practical planning and dependable delivery.</p>
       </div>
+    </section>
+
+    <nav class="gallery-nav" aria-label="Gallery categories">
+      <a href="#construction-projects">Construction</a>
+      <a href="#domestic-projects">Domestic</a>
+      <a href="#commercial-projects">Commercial</a>
+    </nav>
+
+    <section class="section project-gallery-section" id="construction-projects">
+      <div class="section-heading">
+        <p class="eyebrow large-label">Construction</p>
+        <h2>Groundworks and external construction in progress.</h2>
+      </div>
+      <div class="photo-led-gallery" id="construction-gallery" aria-label="Construction project photographs"></div>
     </section>
 
     <section class="section project-gallery-section" id="domestic-projects">
@@ -102,5 +116,15 @@
     </div>
   </footer>
   <a href="https://wa.me/447835983259" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Message Parker Plant and Machinery on WhatsApp">Chat</a>
+  <script>
+    const constructionGallery = document.querySelector('#construction-gallery');
+    const constructionPhotos = Array.from({ length: 30 }, (_, index) => String(index + 1).padStart(3, '0'));
+
+    constructionGallery.innerHTML = constructionPhotos.map((number) => `
+      <figure>
+        <img src="assets/gallery/construction/construction-${number}.jpg" alt="Construction project work by Parker Plant and Machinery in Cornwall" loading="lazy">
+      </figure>
+    `).join('');
+  </script>
 </body>
 </html>
