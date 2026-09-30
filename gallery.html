@@ -82,10 +82,14 @@
     </div>
   </footer>
   <a href="https://wa.me/447835983259" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Message Parker Plant and Machinery on WhatsApp">Chat</a>
-  <script src="assets/gallery/gallery-data.js?v=20260930"></script>
+  <script src="assets/gallery/gallery-data.js?v=20260930-gallery-clean"></script>
   <script>
     const constructionGallery = document.querySelector('#construction-gallery');
-    const constructionPhotos = Array.from({ length: 30 }, (_, index) => String(index + 1).padStart(3, '0'));
+    const constructionPhotos = [
+      '001', '002', '003', '004', '005', '006', '007', '008', '009', '010',
+      '011', '013', '014', '016', '017', '018', '019', '020', '021', '022',
+      '024', '025', '026', '027', '028', '030'
+    ];
 
     const renderGallery = (element, photos, alt) => {
       element.innerHTML = photos.map((photo) => `
