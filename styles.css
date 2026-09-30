@@ -1647,6 +1647,10 @@ h2 {
       linear-gradient(90deg, rgba(0, 0, 0, 0.58) 0%, rgba(0, 0, 0, 0.16) 100%);
   }
 
+  .hero-media {
+    height: 100%;
+  }
+
   .hero h1 {
     font-size: 2.35rem;
     line-height: 0.95;
@@ -1659,6 +1663,7 @@ h2 {
 
   .hero-photo {
     height: 100%;
+    min-height: 100%;
     object-fit: cover;
     object-position: 58% center;
   }
