@@ -53,24 +53,7 @@
         <p class="eyebrow large-label">Domestic Projects</p>
         <h2>Careful groundworks and external construction for homes.</h2>
       </div>
-      <div class="project-gallery-grid">
-        <figure class="project-tile project-tile-featured">
-          <img src="assets/projects/driveway-groundworks-stage.jpg" alt="Driveway groundworks and gravel preparation on a Cornwall domestic project">
-          <figcaption><strong>Driveway groundworks</strong><span>Preparation and gravel finish underway for a domestic project.</span></figcaption>
-        </figure>
-        <figure class="project-tile">
-          <img src="assets/new-digger/digger-excavation-trench.jpg" alt="Excavation work for drainage and services in Cornwall">
-          <figcaption><strong>Drainage and service trenches</strong><span>Accurate excavation where access and tidy working matter.</span></figcaption>
-        </figure>
-        <figure class="project-tile">
-          <img src="assets/new-digger/digger-kobelco-side.jpg" alt="Compact excavator working on a domestic groundworks project in Cornwall">
-          <figcaption><strong>Site preparation</strong><span>Compact machinery supporting precise preparation work.</span></figcaption>
-        </figure>
-        <figure class="project-tile">
-          <img src="assets/new-digger/digger-field-ready.jpg" alt="Excavator ready for an access and ground preparation project in Cornwall">
-          <figcaption><strong>Access and ground preparation</strong><span>Practical equipment and a well-managed approach from the start.</span></figcaption>
-        </figure>
-      </div>
+      <div class="photo-led-gallery" id="domestic-gallery" aria-label="Domestic project photographs"></div>
     </section>
 
     <section class="section project-gallery-section project-gallery-dark" id="commercial-projects">
@@ -78,24 +61,7 @@
         <p class="eyebrow large-label">Commercial &amp; Site Work</p>
         <h2>Capable support for managed sites, contractors and landowners.</h2>
       </div>
-      <div class="project-gallery-grid">
-        <figure class="project-tile project-tile-featured">
-          <img src="assets/new-digger/digger-clearance-work.jpg" alt="Excavator carrying out site clearance work in Cornwall">
-          <figcaption><strong>Site clearance</strong><span>Preparing working areas for the next phase of construction.</span></figcaption>
-        </figure>
-        <figure class="project-tile">
-          <img src="assets/new-digger/digger-clearance-log-grab.jpg" alt="Compact excavator supporting clearance and land preparation in Cornwall">
-          <figcaption><strong>Land and vegetation clearance</strong><span>Controlled clearance work with the right attachment for the task.</span></figcaption>
-        </figure>
-        <figure class="project-tile">
-          <img src="assets/new-digger/digger-transport-ready.jpg" alt="Compact excavator transported for a Cornwall construction project">
-          <figcaption><strong>Efficient site mobilisation</strong><span>In-house machinery helps keep the project moving.</span></figcaption>
-        </figure>
-        <figure class="project-tile">
-          <img src="assets/new-digger/digger-kobelco-open-ground.jpg" alt="Excavator working on open ground in Cornwall">
-          <figcaption><strong>Ground reduction and excavation</strong><span>Reliable plant and experienced operation as part of the wider job.</span></figcaption>
-        </figure>
-      </div>
+      <div class="photo-led-gallery" id="commercial-gallery" aria-label="Commercial project photographs"></div>
     </section>
 
     <section class="gallery-cta">
@@ -116,15 +82,34 @@
     </div>
   </footer>
   <a href="https://wa.me/447835983259" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Message Parker Plant and Machinery on WhatsApp">Chat</a>
+  <script src="assets/gallery/gallery-data.js?v=20260930"></script>
   <script>
     const constructionGallery = document.querySelector('#construction-gallery');
     const constructionPhotos = Array.from({ length: 30 }, (_, index) => String(index + 1).padStart(3, '0'));
 
-    constructionGallery.innerHTML = constructionPhotos.map((number) => `
+    const renderGallery = (element, photos, alt) => {
+      element.innerHTML = photos.map((photo) => `
       <figure>
-        <img src="assets/gallery/construction/construction-${number}.jpg" alt="Construction project work by Parker Plant and Machinery in Cornwall" loading="lazy">
+        <img src="${photo}" alt="${alt}" loading="lazy">
       </figure>
-    `).join('');
+      `).join('');
+    };
+
+    renderGallery(
+      constructionGallery,
+      constructionPhotos.map((number) => `assets/gallery/construction/construction-${number}.jpg`),
+      'Construction project work by Parker Plant and Machinery in Cornwall'
+    );
+    renderGallery(
+      document.querySelector('#domestic-gallery'),
+      galleryPhotos.domestic,
+      'Domestic groundworks project by Parker Plant and Machinery in Cornwall'
+    );
+    renderGallery(
+      document.querySelector('#commercial-gallery'),
+      galleryPhotos.commercial,
+      'Commercial construction project by Parker Plant and Machinery in Cornwall'
+    );
   </script>
 </body>
 </html>
