@@ -1172,13 +1172,22 @@ h3,
 
 .hero-watermark {
   position: absolute;
-  top: 14%;
-  right: clamp(32px, 6vw, 110px);
+  top: 50%;
+  right: clamp(34px, 7vw, 130px);
   z-index: 0;
-  width: clamp(170px, 21vw, 340px);
-  height: auto;
-  opacity: 0.25;
+  width: clamp(150px, 14vw, 220px);
+  height: clamp(122px, 11.5vw, 178px);
+  overflow: hidden;
+  transform: translateY(-50%);
+  opacity: 0.5;
   pointer-events: none;
+}
+
+.hero-watermark img {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 10px 24px rgba(0, 0, 0, 0.35));
 }
 
 .hero-photo {
@@ -1671,10 +1680,11 @@ h2 {
   }
 
   .hero-watermark {
-    top: 12%;
-    right: 18px;
-    width: 130px;
-    opacity: 0.18;
+    top: 22%;
+    right: 20px;
+    width: 108px;
+    height: 87px;
+    opacity: 0.35;
   }
 
   .trust-strip {
